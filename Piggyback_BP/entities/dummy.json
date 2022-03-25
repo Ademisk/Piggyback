@@ -1,0 +1,176 @@
+{
+  "format_version": "1.18.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "max:dummy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+       "animations": {
+        "on_dummy_load": "controller.animation.dummy.load"
+      },
+      "scripts": {
+        "animate": [
+          "on_dummy_load"
+        ]
+      }
+    },
+
+    "component_groups": {
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "dummy", "villager", "mob" ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:hide": {
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": true
+      },
+      "minecraft:follow_range": {
+        "value": 128
+      },
+      "minecraft:annotation.open_door": {
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:inventory": {
+        "inventory_size": 8,
+        "private": true
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:behavior.find_mount": {
+        "priority": 0,
+        "within_radius": 16,
+        "avoid_water": true,
+        "start_delay": 100,
+        "target_needed": false,
+        "mount_distance": 2.0
+      },
+      "minecraft:behavior.float": {
+        "priority": 1
+      },
+      "minecraft:behavior.hide": {
+        "priority": 1,
+        "speed_multiplier": 0.8,
+        "poi_type": "bed",
+        "duration": 30.0
+      },
+      "minecraft:behavior.panic": {
+        "priority": 2,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 4,
+        "entity_types": [
+          {
+            "filters": { 
+                "any_of": [
+                  { "test" : "is_family", "subject" : "other", "value" : "zombie"},
+                  { "test" : "is_family", "subject" : "other", "value" : "zombie_villager"},
+                  { "test" : "is_family", "subject" : "other", "value" : "zombie_pigman"},
+                  { "test" : "is_family", "subject" : "other", "value" : "illager"},
+                  { "test" : "is_family", "subject" : "other", "value" : "vex"}
+                ]
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 0.6,
+            "sprint_speed_multiplier": 0.6
+          }
+        ]
+      },
+      "minecraft:behavior.pickup_items": {
+        "priority": 4,
+        "max_dist": 3,
+        "goal_radius": 2,
+        "speed_multiplier": 0.5,
+        "can_pickup_to_hand_or_equipment": false
+      },
+      "minecraft:behavior.move_indoors": {
+        "priority": 6,
+        "speed_multiplier": 0.8,
+        "timeout_cooldown": 8.0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8,
+        "probability": 0.02
+      },
+      "minecraft:behavior.move_towards_dwelling_restriction": {
+        "priority": 10,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 10,
+        "speed_multiplier": 0.6
+      },
+        "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "player"
+          ],
+          "pull_in_entities": true,
+          "interact_text": "action.interact.ridePlayer",
+          "seats": [
+            {
+              //x, z, y
+              "position": [ 0.0, 0.4, -0.5 ],
+              "min_rider_count": 0,
+              "max_rider_count": 0,
+              "lock_rider_rotation": 90
+            }
+          ]
+        },
+      "minecraft:conditional_bandwidth_optimization": {
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.load": {
+			"initial_state": "player_can_ride",
+			"states": {
+				"player_can_ride": {
+					"on_entry": [
+						"variable.rider=0;"
+					],
+					"transitions": [
+						{
+							"has_player_rider": "query.has_rider"
+						}
+					]
+				},
+
+				"has_player_rider": {
+					"on_entry": [
+						"/say CARRYING A PLAYER!",
+						"variable.has_rider=1;"
+					],
+					"transitions": [
+						{
+							"player_can_ride": "!query.has_rider"
+						}
+					]
+				}
+			}
+		}
+	}
+}

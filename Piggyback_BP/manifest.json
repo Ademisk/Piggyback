@@ -1,0 +1,24 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Piggyback Rides - v1.0.3!",
+		"description": "Piggyback Rides - Behavior!",
+		"uuid": "5f8f6737-86b7-47d5-aa91-5fe19b5676ae",
+		"version": [1, 0, 3],
+		"min_engine_version": [1, 16, 0]
+	},
+	"modules": [
+		{
+			"description": "Behavior",
+			"version": [1, 0, 3],
+			"uuid": "ed435042-89e0-49d5-a72f-7c473096c6db",
+			"type": "data"
+		}
+	],
+	"dependencies": [
+	    {
+	     "uuid":"dfabad42-009c-43b2-9520-212443330331",
+	      "version":[1,0,0]
+	    }
+	]
+}

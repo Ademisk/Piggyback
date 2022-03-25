@@ -1,0 +1,102 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.load": {
+			"initial_state": "loaded",
+			"states": {
+				"loaded": {
+					"transitions": [
+						{
+							"reset_riders": "1"
+						}
+					]
+				},
+
+				"reset_riders": {
+					"on_entry": [
+						//"/say Has no rider!",
+						"@s max:remove_rider_components"
+					],
+					"transitions": [
+						{
+							"parrot_can_ride": "(!query.is_sneaking || query.is_item_equipped('main_hand') || query.is_item_equipped('off_hand')) && !query.has_rider"
+						},
+						{
+							"player_can_ride": "query.is_sneaking && (!query.has_rider && !query.is_item_equipped('main_hand') && !query.is_item_equipped('off_hand'))"
+						}
+					]
+				},
+
+				"parrot_can_ride": {
+					"on_entry": [
+						//"/say Parrot can ride!",
+						"@s max:parrot_can_ride"
+					],
+					"transitions": [
+						{
+							"player_can_ride": "query.is_sneaking && (!query.has_rider && !query.is_item_equipped('main_hand') && !query.is_item_equipped('off_hand'))"
+						},
+						{
+							"has_parrot_rider": "query.has_rider"
+						}
+					]
+				},
+
+				"player_can_ride": {
+					"on_entry": [
+						//"/say PLAYER can ride!",
+						"@s max:player_can_ride"
+					],
+					"transitions": [
+						{
+							"parrot_can_ride": "(!query.is_sneaking || query.is_item_equipped('main_hand') || query.is_item_equipped('off_hand')) && !query.has_rider"
+						},
+						{
+							"has_player_rider": "query.has_rider"
+						}
+					]
+				},
+
+				"has_parrot_rider": {
+					/*"on_entry": [
+						"/say CARRYING A PARROT!"
+					],*/
+					"transitions": [
+						{
+							"kick_riders": "variable.attack_time > 0.0"
+						},
+						{
+							"reset_riders": "!query.has_rider"
+						}
+					]
+				},
+
+				"has_player_rider": {
+					/*"on_entry": [
+						"/say CARRYING A PLAYER!"
+					],*/
+					"transitions": [
+						{
+							"kick_riders": "variable.attack_time > 0.0"
+						},
+						{
+							"reset_riders": "!query.has_rider"
+						}
+					]
+				},
+
+				"kick_riders": {
+					"on_entry": [
+						//"/say Riders kicked!",
+						"/ride @s evict_riders"
+					],
+					"transitions": [
+						{
+							"reset_riders": "!query.has_rider"
+						}
+					]
+				}
+			}
+		}
+	}
+}
