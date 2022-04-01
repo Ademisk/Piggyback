@@ -11,11 +11,10 @@
 						}
 					]
 				},
-
 				"reset_riders": {
 					"on_entry": [
 						//"/say Has no rider!",
-						"@s max:remove_rider_components"
+						"@s piggyback:remove_rider_components"
 					],
 					"transitions": [
 						{
@@ -26,11 +25,10 @@
 						}
 					]
 				},
-
 				"parrot_can_ride": {
 					"on_entry": [
 						//"/say Parrot can ride!",
-						"@s max:parrot_can_ride"
+						"@s piggyback:parrot_can_ride"
 					],
 					"transitions": [
 						{
@@ -41,11 +39,10 @@
 						}
 					]
 				},
-
 				"player_can_ride": {
 					"on_entry": [
 						//"/say PLAYER can ride!",
-						"@s max:player_can_ride"
+						"@s piggyback:player_can_ride"
 					],
 					"transitions": [
 						{
@@ -56,35 +53,32 @@
 						}
 					]
 				},
-
 				"has_parrot_rider": {
-					/*"on_entry": [
-						"/say CARRYING A PARROT!"
-					],*/
+					//					"on_entry": [
+					//						"/say CARRYING A PARROT!"
+					//					],
 					"transitions": [
 						{
-							"kick_riders": "variable.attack_time > 0.0"
+							"kick_riders": "variable.attack_time > 0.0 || query.is_swimming || query.is_gliding"
 						},
 						{
 							"reset_riders": "!query.has_rider"
 						}
 					]
 				},
-
 				"has_player_rider": {
-					/*"on_entry": [
-						"/say CARRYING A PLAYER!"
-					],*/
+					//					"on_entry": [
+					//						"/say CARRYING A PLAYER!"
+					//					],
 					"transitions": [
 						{
-							"kick_riders": "variable.attack_time > 0.0"
+							"kick_riders": "variable.attack_time > 0.0 || query.is_swimming || query.is_gliding || query.is_riding"
 						},
 						{
 							"reset_riders": "!query.has_rider"
 						}
 					]
 				},
-
 				"kick_riders": {
 					"on_entry": [
 						//"/say Riders kicked!",

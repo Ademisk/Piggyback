@@ -1,24 +1,40 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "Piggyback Rides - v1.0.3!",
-		"description": "Piggyback Rides - Behavior!",
-		"uuid": "5f8f6737-86b7-47d5-aa91-5fe19b5676ae",
-		"version": [1, 0, 3],
-		"min_engine_version": [1, 16, 0]
+		"name": "Piggyback Rides - Behavior!",
+		"description": "Piggyback Rides!",
+		"uuid": "40632df9-431f-466a-8436-90bef326fab6",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			16,
+			0
+		]
 	},
 	"modules": [
 		{
 			"description": "Behavior",
-			"version": [1, 0, 3],
-			"uuid": "ed435042-89e0-49d5-a72f-7c473096c6db",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"uuid": "0e3bf181-7c43-4bf3-b81c-ebbb7619c15a",
 			"type": "data"
 		}
 	],
 	"dependencies": [
-	    {
-	     "uuid":"dfabad42-009c-43b2-9520-212443330331",
-	      "version":[1,0,0]
-	    }
+		{
+			"uuid": "052f8134-c574-4897-97cf-afb931e4c878",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
 	]
 }

@@ -64,7 +64,8 @@
 					"rotation" : [ "-90.0 + query.target_x_rotation - query.is_sneaking * 15.0 - this", "-5.0 + query.target_y_rotation", 0.0 ]
 				},
 				"rightitem" : {
-					"rotation" : [ 0.0, -10.0, 0.0 ]
+					"rotation" : [ 0.0, -10.0, 0.0 ],
+					"scale": [0.0, 0.0, 0.0]
 				}
 			}
 		},
@@ -262,8 +263,14 @@
 				"leftarm" : {
 					"rotation" : [ 0.0, 0.0, 0.0 ]
 				},
+				"leftItem" : {
+					"scale": [0, 0, 0]
+				},
 				"rightarm" : {
 					"rotation" : [ 0.0, 0.0, 0.0 ]
+				},
+				"rightItem" : {
+					"scale": [0, 0, 0]
 				}
 			}
 		},

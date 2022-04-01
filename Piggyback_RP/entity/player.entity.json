@@ -25,13 +25,15 @@
           "variable.hand_bob = 0.0;",
 
 
+          "variable.parrot_can_ride=true;",
           "variable.player_can_ride=false;",
+          "variable.has_parrot_rider=false;",
           "variable.has_player_rider=false;"
         ],
         "pre_animation": [
           //Carrying Players
           //With how it's structured (needs 2 ticks to reach state of 'has_player_rider'), visual changes may not be reflected immediately
-          "!query.has_rider ? {variable.player_can_ride = (query.is_sneaking && !query.is_item_equipped('main_hand') && !query.is_item_equipped('off_hand')); variable.has_player_rider = false;} : {variable.has_player_rider = variable.player_can_ride;};",
+          "!query.has_rider ? {variable.player_can_ride = (query.is_sneaking && !query.is_item_equipped('main_hand') && !query.is_item_equipped('off_hand')); variable.parrot_can_ride = !variable.player_can_ride;variable.has_player_rider = false;variable.has_parrot_rider = false;} : {variable.has_player_rider = variable.player_can_ride;variable.has_parrot_rider = variable.parrot_can_ride;};",
 
           //Vanilla
           "variable.helmet_layer_visible = 1.0;",
