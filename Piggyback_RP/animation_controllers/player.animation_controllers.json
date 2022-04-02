@@ -112,17 +112,14 @@
 							"first_person_swap_item": "!query.blocking"
 						},
 						{
-							"first_person_shield_block": "!variable.has_player_rider && query.blocking"
-						},
-						{
-							"carrying.arms" : "variable.has_player_rider"
+							"first_person_shield_block": "query.blocking"
 						},
 						{
 							"first_person_attack_controller" : "variable.attack_time > 0.0f && query.get_equipped_item_name != 'map'"
 						},
 						"first_person_base_pose",
 						{
-							"first_person_empty_hand" : "!variable.has_player_rider && query.get_equipped_item_name(0, 1) != 'map'"
+							"first_person_empty_hand" : "query.get_equipped_item_name(0, 1) != 'map'"
 						},
 						{
 							"first_person_walk" : "variable.bob_animation"
@@ -134,7 +131,7 @@
 							"first_person_crossbow_equipped": "query.get_equipped_item_name == 'crossbow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0)"
 						},
 						{
-							"first_person_breathing_bob": "variable.attack_time <= 0.0"
+							"first_person_breathing_bob": "variable.attack_time <= 0.0 && !variable.has_player_rider"
 						}
 					],
 					"transitions" : [
@@ -194,7 +191,7 @@
 							"riding.legs" : "query.is_riding"
 						},
 						{
-							"carrying.arms" : "variable.has_player_rider"
+							"carrying_arms" : "variable.has_player_rider"
 						},
 						{
 							"holding" : "!variable.has_player_rider"

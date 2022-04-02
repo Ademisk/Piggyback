@@ -68,7 +68,7 @@
         "move.legs": "animation.player.move.legs",
         "swimming": "animation.player.swim",
         "swimming.legs": "animation.player.swim.legs",
-        "carrying.arms": "animation.player.carrying.arms",  //Addon
+        "carrying_arms": "animation.player.carrying_arms",  //Addon
         "riding.arms": "animation.player.riding.arms",
         "riding.legs": "animation.player.riding.legs",
         "holding": "animation.player.holding",

@@ -257,20 +257,20 @@
 				}
 			}
 		},
-		"animation.player.carrying.arms" : {
+		"animation.player.carrying_arms" : {
 			"loop" : true,
 			"bones" : {
 				"leftarm" : {
 					"rotation" : [ 0.0, 0.0, 0.0 ]
 				},
-				"leftItem" : {
+				"leftitem" : {
+					"scale": [0, 0, 0]
+				},
+				"rightitem": {
 					"scale": [0, 0, 0]
 				},
 				"rightarm" : {
 					"rotation" : [ 0.0, 0.0, 0.0 ]
-				},
-				"rightItem" : {
-					"scale": [0, 0, 0]
 				}
 			}
 		},
