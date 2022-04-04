@@ -3,38 +3,16 @@
 	"header": {
 		"name": "Piggyback Rides - Resources!",
 		"description": "Piggyback Rides!",
-		"uuid": "f6477401-21b0-46b5-b82c-21688d0f5a3a",
-		"version": [
-			1,
-			4,
-			0
-		],
-		"min_engine_version": [
-			1,
-			18,
-			10
-		]
+		"uuid": "4147661e-97aa-4137-a39e-71cfb1db4423",
+		"version": [1,5,0],
+		"min_engine_version": [1,18,10]
 	},
 	"modules": [
 		{
 			"description": "Resources",
 			"type": "resources",
-			"uuid": "94c7ac76-d854-4a2e-b9f4-0d88326ebdff",
-			"version": [
-				1,
-				4,
-				0
-			]
+			"uuid": "2e0d5846-8ea1-40c1-9728-586c55188a8d",
+			"version": [1,5,0]
 		}
-	],
-	"metadata": {
-		"generated_with": {
-			"bridge": [
-				"2.2.6"
-			],
-			"dash": [
-				"0.8.9"
-			]
-		}
-	}
+	]
 }
