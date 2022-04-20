@@ -1,18 +1,18 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "Piggyback Rides - Resources!",
+		"name": "Piggyback Rides - v1.8!",
 		"description": "Piggyback Rides!",
-		"uuid": "8471a269-3952-4174-aecd-666aa7e39fc2",
-		"version": [1,7,0],
+		"uuid": "af1bf153-7ed3-4dc5-b79c-41767e3606e5",
+		"version": [1,8,0],
 		"min_engine_version": [1,18,10]
 	},
 	"modules": [
 		{
 			"description": "Resources",
-			"uuid": "c92e8957-c0df-4433-9918-c74915e572ab",
+			"uuid": "c94bb8be-b2ed-4d30-954d-cd0696c43364",
 			"type": "resources",
-			"version": [1,7,0]
+			"version": [1,8,0]
 		}
 	]
 }

@@ -1,5 +1,5 @@
 {
-    "format_version": "1.18.10",
+    "format_version": "1.18.30",
     "minecraft:entity": {
         "description": {
             "identifier": "minecraft:player",
@@ -53,8 +53,11 @@
                     "remove_effects": "bad_omen"
                 }
             },
-            //Add-on component_groups
-            "piggyback:player_rideable": {
+
+            //====================================
+            //Addon
+            //====================================
+            "piggyback:cgPlayerRideable": {
                 "minecraft:rideable": {
                     "seat_count": 1,
                     "family_types": [
@@ -67,11 +70,7 @@
                         {
                             //x, z, y
                             //Things riding player are at different [x,z,y] than player riding things!!!
-                            "position": [
-                                0.0,
-                                -1.0,
-                                -0.5
-                            ],
+                            "position": [ 0.0, -1.0, -0.5 ],
                             "min_rider_count": 0,
                             "max_rider_count": 0,
                             "lock_rider_rotation": 45
@@ -79,7 +78,7 @@
                     ]
                 }
             },
-            "piggyback:parrot_rideable": {
+            "piggyback:cgParrotRideable": {
                 "minecraft:rideable": {
                     "seat_count": 2,
                     "family_types": [
@@ -88,21 +87,13 @@
                     "pull_in_entities": true,
                     "seats": [
                         {
-                            "position": [
-                                0.4,
-                                -0.15,
-                                0.04
-                            ],
+                            "position": [ 0.4, -0.15, 0.04 ],
                             "min_rider_count": 0,
                             "max_rider_count": 0,
                             "lock_rider_rotation": 0
                         },
                         {
-                            "position": [
-                                -0.4,
-                                -0.15,
-                                0.04
-                            ],
+                            "position": [ -0.4, -0.15, 0.04 ],
                             "min_rider_count": 1,
                             "max_rider_count": 2,
                             "lock_rider_rotation": 0
@@ -110,7 +101,10 @@
                     ]
                 }
             }
+            //====================================
+            //====================================
         },
+
         "components": {
             "minecraft:experience_reward": {
                 "on_death": "Math.Min(query.player_level * 7, 100)"
@@ -204,6 +198,7 @@
                 }
             }
         },
+
         "events": {
             "minecraft:gain_bad_omen": {
                 "add": {
@@ -238,39 +233,43 @@
                     ]
                 }
             },
-            //Add-on events
-            "piggyback:parrot_can_ride": {
+
+            //Addon
+            //===========================
+            "piggyback:eParrotCanRide": {
                 "remove": {
                     "component_groups": [
-                        "piggyback:player_rideable"
+                        "piggyback:cgPlayerRideable"
                     ]
                 },
                 "add": {
                     "component_groups": [
-                        "piggyback:parrot_rideable"
+                        "piggyback:cgParrotRideable"
                     ]
                 }
             },
-            "piggyback:player_can_ride": {
+            "piggyback:ePlayerCanRide": {
                 "remove": {
                     "component_groups": [
-                        "piggyback:parrot_rideable"
+                        "piggyback:cgParrotRideable"
                     ]
                 },
                 "add": {
                     "component_groups": [
-                        "piggyback:player_rideable"
+                        "piggyback:cgPlayerRideable"
                     ]
                 }
             },
-            "piggyback:remove_rider_components": {
+            "piggyback:eRemoveRiderComponents": {
                 "remove": {
                     "component_groups": [
-                        "piggyback:parrot_rideable",
-                        "piggyback:player_rideable"
+                        "piggyback:cgParrotRideable",
+                        "piggyback:cgPlayerRideable"
                     ]
                 }
             }
+            //===========================
+            //===========================
         }
     }
 }
